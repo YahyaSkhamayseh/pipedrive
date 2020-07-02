@@ -48,30 +48,6 @@
         "inView": true
     },
     {
-        "name": "password",
-        "dbType": "string",
-        "htmlType": "password",
-        "validations": "",
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": false,
-        "inIndex": false,
-        "inView": false
-    },
-    {
-        "name": "token",
-        "dbType": "string",
-        "htmlType": "hidden",
-        "validations": "",
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": false,
-        "inIndex": false,
-        "inView": false
-    },
-    {
         "name": "email",
         "dbType": "string",
         "htmlType": "email",

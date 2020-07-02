@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($blogBs as $blogB)
+        @foreach($blogBs ?? '' as $blogB)
             <tr>
                 <td>{{ $blogB->title }}</td>
             <td>{{ $blogB->post_date }}</td>

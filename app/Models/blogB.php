@@ -6,26 +6,87 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class blogB
- * @package App\Models
- * @version June 30, 2020, 1:27 pm UTC
- *
- * @property \App\Models\Writer $writer
- * @property \Illuminate\Database\Eloquent\Collection $comments
- * @property \Illuminate\Database\Eloquent\Collection $users
- * @property \Illuminate\Database\Eloquent\Collection $roles
- * @property string $title
- * @property string $post_date
- * @property string $body
- 
- * @property string $email
- * @property integer $author_gender
- * @property string $post_type
- * @property integer $post_visits
- * @property string $category
- * @property string $category_short
- * @property boolean $is_private
- * @property integer $writer_id
+ * @SWG\Definition(
+ *      definition="blogB",
+ *      required={"title"},
+ *      @SWG\Property(
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="title",
+ *          description="title",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="post_date",
+ *          description="post_date",
+ *          type="string",
+ *          format="date-time"
+ *      ),
+ *      @SWG\Property(
+ *          property="body",
+ *          description="body",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="email",
+ *          description="email",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="author_gender",
+ *          description="author_gender",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="post_type",
+ *          description="post_type",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="post_visits",
+ *          description="post_visits",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="category",
+ *          description="category",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="category_short",
+ *          description="category_short",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="is_private",
+ *          description="is_private",
+ *          type="boolean"
+ *      ),
+ *      @SWG\Property(
+ *          property="writer_id",
+ *          description="writer_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="created_at",
+ *          description="created_at",
+ *          type="string",
+ *          format="date-time"
+ *      ),
+ *      @SWG\Property(
+ *          property="updated_at",
+ *          description="updated_at",
+ *          type="string",
+ *          format="date-time"
+ *      )
+ * )
  */
 class blogB extends Model
 {
@@ -62,7 +123,6 @@ class blogB extends Model
         'title' => 'string',
         'post_date' => 'datetime',
         'body' => 'string',
-       
         'email' => 'string',
         'author_gender' => 'integer',
         'post_type' => 'string',

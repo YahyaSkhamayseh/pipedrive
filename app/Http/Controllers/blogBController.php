@@ -7,6 +7,9 @@ use App\Http\Requests\UpdateblogBRequest;
 use App\Repositories\blogBRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Devio\Pipedrive\Pipedrive;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderShipped;
 use Flash;
 use Response;
 
@@ -30,6 +33,28 @@ class blogBController extends AppBaseController
     public function index(Request $request)
     {
         $blogBs = $this->blogBRepository->all();
+
+        $pipedrive = app()->make('pipedrive');
+        $pipedrive->persons->update(1, ['name' => 'Israel Ortuno3']);
+        //$pipedrive->deals->duplicate(1);
+        $pipedrive->deals->update(1, ['stage_id' => 2]);
+       // $pipedrive->pushnotifications->add(['title' => 'stage changed !']);
+       // $output= $pipedrive->deals->all();
+   Mail::to("ysaberkh@gmail.com")->send(new OrderShipped());
+      //  $result=$output->getData();
+       
+      //  $data = $result[0];
+       // Flash::success(var_dump($data)); 
+       // $pipedrive->leads->update(1, ['name' => 'Israel Ortuno']);
+       // $organizations=$pipedrive->organizations()->all();
+        //print("hi");
+       // 
+        // $organizations = Pipedrive::organizations()->all();
+        // print_r($organizations);
+        // //
+        // Pipedrive::persons()->add(['name' => 'John Doe']);
+        // $token = 'PipedriveTokenHere';
+        // $pipedrive = new Pipedrive($token);
 
         return view('blog_bs.index')
             ->with('blogBs', $blogBs);

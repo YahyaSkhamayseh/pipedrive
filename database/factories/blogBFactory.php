@@ -11,8 +11,6 @@ $factory->define(blogB::class, function (Faker $faker) {
         'title' => $faker->word,
         'post_date' => $faker->word,
         'body' => $faker->text,
-        'password' => $faker->word,
-        'token' => $faker->word,
         'email' => $faker->word,
         'author_gender' => $faker->randomDigitNotNull,
         'post_type' => $faker->word,
